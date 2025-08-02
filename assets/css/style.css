@@ -1,0 +1,1766 @@
+/* BODY CSS */
+@font-face {
+    font-family: 'CyGroteskKey';
+    src: url('../font/cy-grotesk-key-bold.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: block; /* Menonaktifkan flex di body, biar home tidak terpengaruh */
+}
+
+/* NAVBAR CSS */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: radial-gradient(circle at 0% 0%, #ff4d00, #ff961c, #fbd4b1);
+    color: white;
+    padding-top: 20px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Hanken Grotesk", serif;
+}
+
+.sidebar h1 {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    margin-top: -10px;
+    margin-bottom: -5px;
+    font-weight: 900;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    font-size: 18px;
+}
+
+.sidebar ul li {
+    padding: 12px;
+    text-align: left;
+    transition: background 0.3s;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 3px;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.sidebar ul li a:hover {
+    transform: scale(1.05);
+}
+
+.logout {
+    margin-top: 20px;
+    position: absolute;
+    bottom: 50px;
+    width: 80%;
+    font-weight: bolder;
+    font-size: 23px;
+    text-align: right;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.sidebar .logout:hover {
+    transform: scale(1.10);
+}
+
+/* Responsif Navbar */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .content {
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 180px;
+    }
+
+    .content {
+        margin-left: 180px;
+    }
+
+    .sidebar h1 {
+        font-size: 18px;
+    }
+}
+
+/* FOOTER CSS */
+
+.footer {
+    text-align: left;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 10px 20px;
+}
+
+.footer p {
+    font-family: "Arimo", serif;
+    color: #545454;
+    font-size: 16px;
+    text-align: right;
+    margin-top: -10px;
+    margin-right: 15px;
+}
+
+.footer hr {
+    border: 0;
+    border-top: 2px solid #ff4d00;
+    margin: 30px 0;
+    margin-left: -817px;
+    margin-right: -25px;
+}
+
+/* HOME CSS */
+
+.home {
+    margin-left: 30px;
+    text-align: center;
+    margin-top: -30px;
+}
+/* Mengatur judul utama */
+.home h1 {
+    font-family: 'CyGroteskKey', sans-serif;
+    text-align: center;
+    font-size: 35px;
+    color: #ff4d00;
+    padding: 20px;
+    margin-left: 225px;
+    font-size: 2.5em;
+    margin-bottom: -25px;
+}
+
+/* Mengatur paragraf */
+.home p {
+    font-family: "Hanken Grotesk", serif;
+    max-width: 800px;
+    font-size: 25px;
+    margin: 20px auto;
+    margin-top: 90px;
+    padding-left: 205px;
+    line-height: 1.6;
+    font-size: 1.1em;
+    text-align: center;
+    color: #545454;
+}
+
+/* Mengatur garis horizontal */
+.home hr {
+    border: 0;
+    border-top: 2px solid #ff4d00;
+    margin: 30px 0;
+}
+
+
+/* PROFILE CSS */
+
+.profile {
+    margin-top: -40px;
+    margin-left: 300px;
+    
+}
+
+.profile h2 {
+    font-family: 'CyGroteskKey', sans-serif;
+    text-align: center;
+    font-size: 35px;
+    color: #ff4d00;
+    padding: 20px;
+    font-size: 2.5em;
+    margin-bottom: -25px;
+}
+
+.profile p {
+    font-family: "Hanken Grotesk", serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: left;
+    color: #545454;
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.profile hr {
+    border: 0;
+    border-top: 2px solid #ff4d00;
+    margin: 30px 0;
+    margin-left: -817px;
+
+}
+
+
+/* UBAH PASSWORD CSS */
+
+.popup-profile {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    font-family: "Hanken Grotesk", serif;
+}
+
+.popup-profile-content {
+    background: #ff961b;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 400px;
+    text-align: left;
+    position: relative;
+}
+
+.popup-profile-content h3 {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 28px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.popup-profile input {
+    width: 90%;
+    padding: 8px;
+    margin: 5px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.popup-profile label {
+    margin: 5px 12px;
+}
+
+.btn-popup-profile {
+    font-family: "Hanken Grotesk", serif;
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    margin-left: 315px;
+    background-color: white;
+    color: #ff961b;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-profile {
+    font-family: "Hanken Grotesk", serif;
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #ff961b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-profile:hover, .btn-popup-profile:hover {
+    background-color: #ff4d00;
+}
+
+
+
+/* LOGIN CSS */
+.login {
+    background: url('../img/login.jpg') no-repeat center center fixed;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.5); 
+    padding: 30px;
+    margin-left: -850px;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    height: 350px;
+    text-align: center;
+}
+
+.login h2 {
+    font-family: 'CyGroteskKey', sans-serif;
+    font-size: 44px;
+    margin-top: -2px;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.login input {
+    font-family: "Hanken Grotesk", serif;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 25px; 
+    border: 1px solid #ccc;
+    box-sizing: border-box; 
+    background-color: rgba(255, 255, 255, 0.5); 
+    color: #333;
+}
+
+.login button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5); 
+    color: #333;
+    border: 1px solid #ccc; 
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: "Hanken Grotesk", serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.login button:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-color: #999; 
+}
+
+.register-link {
+    font-family: "Hanken Grotesk", serif;
+    text-align: center;
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+.register-link a {
+    color: #ffffff;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+/* REGISTER CSS */
+.register {
+    background: url('../img/regist.jpg') no-repeat center center fixed;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-container {
+    background-color: rgba(255, 255, 255, 0.5); /* White background with 50% transparency */
+    padding: 30px;
+    margin-left: -850px;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 500px;
+    text-align: center;
+}
+
+.register h2 {
+    font-family: 'CyGroteskKey', sans-serif;
+    font-size: 44px;
+    margin-top: -2px;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.register input {
+    font-family: "Hanken Grotesk", serif;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.5); /* 50% transparent white background */
+    color: #333;
+}
+
+.register button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: "Hanken Grotesk", serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.register button:hover {
+    background-color: rgba(255, 255, 255, 0.7); /* Slightly less transparent on hover */
+    border-color: #999;
+}
+
+.login-link {
+    font-family: "Hanken Grotesk", serif;
+    text-align: center;
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+.login-link a {
+    color: #ffffff;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.forgot-password-p {
+    font-family: "Hanken Grotesk", serif;
+    font-size: 12px;
+    text-align: left;
+    margin-left: 5px;
+    margin-top: -2px;
+    margin-bottom: -2px;
+
+
+}
+
+.forgot-password-p a {
+    text-decoration: none;
+    color: #333;
+
+}
+
+
+/* FORGOT PASSWORD CSS */
+/* Pastikan parent memiliki flexbox */
+.forgot-container {
+    background: url('../img/volleyball.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Form Lupa Password */
+.forgot-password {
+    font-family: "Hanken Grotesk", serif;
+    background-color: rgba(255, 255, 255, 0.5); /* White background with 50% transparency */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+}
+
+.forgot-password h2 {
+    font-family: 'CyGroteskKey', sans-serif;
+    font-size: 44px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.forgot-password p {
+    font-size: 14px;
+    font-family: "Hanken Grotesk", serif;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Input Form */
+.forgot-password input {
+    font-family: "Hanken Grotesk", serif;
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.5); /* 50% transparent white background */
+    color: #333;
+}
+
+/* Tombol */
+.btn-forgot {
+    width: 80%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+    border: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: "Hanken Grotesk", serif;
+
+}
+
+.btn-forgot:hover {
+    background-color: rgba(255, 255, 255, 0.7); /* Slightly less transparent on hover */
+    border-color: #999;
+}
+
+
+/* RESET PASSWORD CSS */
+.reset-password {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('../img/match.jpg') no-repeat center center fixed;
+    background-size: cover;
+
+}
+
+.reset-password-container {
+    font-family: "Hanken Grotesk", serif;
+    background-color: rgba(255, 255, 255, 0.5); /* White background with 50% transparency */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+}
+
+.reset-password h2 {
+    font-family: 'CyGroteskKey', sans-serif;
+    font-size: 44px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reset-password input[type="password"] {
+    font-family: "Hanken Grotesk", serif;
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.5); /* 50% transparent white background */
+    color: #333;
+}
+
+.btn-reset {
+    width: 80%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+    border: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: "Hanken Grotesk", serif;
+}
+
+.btn-reset:hover {
+    background-color: rgba(255, 255, 255, 0.7); /* Slightly less transparent on hover */
+    border-color: #999;
+}
+
+
+
+
+/* KRITERIA CSS */
+.kriteria {
+    margin-top: -25px;
+    margin-left: 250px;
+
+}
+
+.kriteria h1 {
+    padding-top: 25px;
+    padding-left: 25px;
+    font-family: 'CyGroteskKey', sans-serif;
+    color: #ff4d00;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.kriteria hr {
+    border: 0;
+    border-top: 2px solid #ff4d00;
+    margin: 30px 0;
+}
+
+.kriteria-button {
+    font-family: "Hanken Grotesk", serif;
+    margin-left: 25px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #ff961b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+/* POPUP KRITERIA CSS */
+.popup-kriteria {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #ff961b;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    z-index: 1000;
+}
+
+.popup-kriteria h2 {
+    font-family: 'CyGroteskKey', sans-serif;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column; /* Label di atas input */
+    margin-bottom: 15px; /* Jarak antar form */
+}
+
+.popup-kriteria label {
+    font-family: "Hanken Grotesk", serif;
+    color: white;
+    margin-bottom: 5px; /* Beri jarak antara label dan input */
+}
+
+.popup-kriteria input {
+    font-family: "Hanken Grotesk", serif;
+    width: 350px; /* Supaya rapi */
+    padding: 8px;
+    margin: 0; /* Hapus margin kiri agar lurus */
+    border: none;
+    border-radius: 5px;
+}
+
+.popup-kriteria select {
+    font-family: "Hanken Grotesk", serif;
+    width: 363px; /* Supaya rapi */
+    padding: 8px;
+    margin: 0; /* Hapus margin kiri agar lurus */
+    border: none;
+    border-radius: 5px;
+}
+
+.popup-kriteria button {
+    border-radius: 5px;
+    margin-left: 212px;
+    margin-top: 10px;
+    padding: 10px;
+    width: 150px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: "Hanken Grotesk", serif;
+}
+
+.popup-kriteria .save {
+    background: white;
+    color: #ff961c;
+}
+
+/* Tombol X */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.close-btn:hover {
+    color: black;
+}
+
+/* ========================= */
+/*        TABEL KRITERIA     */
+/* ========================= */
+
+.tabel-kriteria {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 75%; /* Ubah lebar tabel menjadi lebih kecil */
+}
+
+/* Judul Tabel */
+.tabel-kriteria h2 {
+    font-family: 'CyGroteskKey', sans-serif;
+    font-size: 24px; /* Perkecil ukuran judul */
+    color: #ff4d00;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* Styling Tabel */
+#dataKriteria {
+    width: 70%; /* Perkecil tabel */
+    max-width: 1000px; /* Maksimal lebar tabel agar tidak terlalu besar */
+    border-collapse: collapse;
+    font-family: "Hanken Grotesk", serif;
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Header Tabel */
+#dataKriteria thead {
+    background-color: #ff961b;
+    color: white;
+}
+
+#dataKriteria thead th {
+    padding: 8px; /* Perkecil padding header */
+    font-size: 14px; /* Perkecil ukuran font */
+    text-align: center;
+}
+
+/* Baris Tabel */
+#dataKriteria tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+#dataKriteria tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Sel Data */
+#dataKriteria tbody td {
+    padding: 6px; /* Perkecil padding */
+    font-size: 13px; /* Perkecil ukuran font */
+    color: #333;
+    text-align: center;
+}
+
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_empty {
+    display: none !important;
+}
+
+div.dt-container div.dt-layout-row {
+    color: #333;
+    font-family: "Hanken Grotesk", serif;
+    font-size: 14px;
+
+}
+div.dt-container {
+    margin-left: 55px;
+    margin-right: 55px;
+}
+
+/* Tombol Aksi */
+.tombol-aksi {
+    text-decoration: none;
+    color: gray;
+    font-size: 14px;
+    margin: 0 5px;
+}
+
+.tombol-aksi:hover {
+    color: black;
+}
+
+
+/* ALTERNATIF CSS */
+.alternatif {
+    margin-top: -25px;
+    margin-left: 250px;
+}
+
+.alternatif h1 {
+    padding-top: 25px;
+    padding-left: 25px;
+    font-family: 'CyGroteskKey', sans-serif;
+    color: #ff4d00;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.alternatif hr {
+    border: 0;
+    border-top: 2px solid #ff4d00;
+    margin: 30px 0;
+}
+
+.alternatif-button {
+    font-family: "Hanken Grotesk", serif;
+    margin-left: 25px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #ff961b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+/* POPUP ALTERNATIF */
+.popup-alternatif {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #ff961b;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    z-index: 1000;
+}
+
+.popup-alternatif h2 {
+    font-family: 'CyGroteskKey', sans-serif;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+}
+
+.popup-alternatif label {
+    font-family: "Hanken Grotesk", serif;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.popup-alternatif input {
+    font-family: "Hanken Grotesk", serif;
+    width: 350px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+.popup-alternatif select {
+    font-family: "Hanken Grotesk", serif;
+    width: 363px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+.popup-alternatif button {
+    border-radius: 5px;
+    margin-left: 212px;
+    margin-top: 10px;
+    padding: 10px;
+    width: 150px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: "Hanken Grotesk", serif;
+}
+
+.popup-alternatif .save {
+    background: white;
+    color: #ff961c;
+}
+
+/* Tombol X */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.close-btn:hover {
+    color: black;
+}
+
+/* ========================= */
+/*        TABEL ALTERNATIF   */
+/* ========================= */
+
+.tabel-alternatif {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 75%;
+}
+
+/* Judul Tabel */
+.tabel-alternatif h2 {
+    font-family: 'CyGroteskKey', sans-serif;
+    font-size: 24px;
+    color: #ff4d00;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* Styling Tabel */
+#dataAlternatif {
+    width: 70%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    font-family: "Hanken Grotesk", serif;
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Header Tabel */
+#dataAlternatif thead {
+    background-color: #ff961b;
+    color: white;
+}
+
+#dataAlternatif thead th {
+    padding: 8px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Baris Tabel */
+#dataAlternatif tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+#dataAlternatif tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Sel Data */
+#dataAlternatif tbody td {
+    padding: 6px;
+    font-size: 13px;
+    color: #333;
+    text-align: center;
+}
+
+/* DataTables Styling */
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_empty {
+    display: none !important;
+}
+
+
+/* PENILAIAN ALTERNATIF CSS */
+/* Container utama */
+.penilaian-alternatif {
+    width: 90%;
+    margin-left: 250PX;
+    max-width: 900px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Judul */
+.penilaian-alternatif h2 {
+    padding-top: 25px;
+    padding-left: 25px;
+    font-family: 'CyGroteskKey', sans-serif;
+    color: #ff4d00;
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: -20px;
+}
+
+.penilaian-alternatif hr {
+    border: 0;
+    border-top: 2px solid #ff4d00;
+    margin: 30px 0;
+    margin-left: -35px;
+    margin-right: -196px;
+}
+
+/* Tabel */
+.tabel-penilaian {
+    width: 100%;
+    margin-left: 50px;
+    border-collapse: collapse;
+    background: white;
+    text-align: center;
+    font-family: "Hanken Grotesk", serif;
+
+}
+
+/* Header tabel */
+.tabel-penilaian th {
+    background-color: #ff961b;
+    color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Sel tabel */
+.tabel-penilaian td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Input penilaian */
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Tombol simpan */
+.button-penilaian-container {
+    display: flex;
+    margin-top: 15px;
+    margin-left: -690px;
+}
+.btn-penilaian {
+    font-family: "Hanken Grotesk", serif;
+    font-weight: bold;
+    margin-left: -5px;
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #ff961b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.btn-penilaian:hover {
+    background-color: #ff6118;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 600px) {
+    .penilaian-alternatif {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .tabel-penilaian th,
+    .tabel-penilaian td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    input[type="number"] {
+        width: 50px;
+    }
+}
+
+/* PERHITUNGAN AHP CSS */
+.perhitungan-ahp {
+    margin-top: -20px;
+    margin-left: 280px;
+    max-width: 77%;
+}
+
+.perhitungan-ahp h2 {
+    padding-top: 25px;
+    font-family: 'CyGroteskKey', sans-serif;
+    color: #ff4d00;
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.perhitungan-ahp hr {
+    border: 0;
+    border-top: 2px solid #ff4d00;
+    margin: 30px 0;
+    margin-left: -35px;
+    margin-right: -30px;
+}
+
+.perhitungan-ahp h3 {
+    font-family: 'CyGroteskKey', sans-serif;
+    color: #ff4d00;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 9999;
+}
+
+#message.show {
+    opacity: 1;
+}
+
+
+/* FORM INPUT PERBANDINGAN KRITERIA */
+.form-perbandingan-kriteria {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: "Hanken Grotesk", serif;
+    color: #333;
+
+}
+
+.form-perbandingan-kriteria table {
+    width: 80%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    text-align: center;
+    margin: 0 auto;
+}
+.form-perbandingan-kriteria select {
+    width: 111px; /* atur lebar sesuai kebutuhan */
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+/* Styling untuk petunjuk pengisian */
+.petunjuk-perbandingan {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    font-family: "Hanken Grotesk", serif;
+    color: #333;
+}
+
+.petunjuk-perbandingan p {
+    margin: 0;
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+.petunjuk-perbandingan ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.petunjuk-perbandingan ul li {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.petunjuk-perbandingan strong {
+    font-weight: bold;
+}
+
+.form-perbandingan-kriteria table th,
+.form-perbandingan-kriteria table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.form-perbandingan-kriteria table th {
+    background-color: #ff961b;
+    color: white;
+}
+
+.form-perbandingan-kriteria input {
+    width: 80px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+}
+
+/* TOMBOL SIMPAN */
+.form-perbandingan-kriteria button {
+    font-family: "Hanken Grotesk", serif;
+    font-weight: bold;
+    margin-left: -925px;
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #ff961b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 25px;
+}
+
+.form-perbandingan-kriteria button:hover {
+    background-color: #ff6118;
+}
+
+/* TABEL AHP */
+.tabel-ahp {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: "Hanken Grotesk", serif;
+
+    
+}
+
+.tabel-ahp th, .tabel-ahp td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    color: #333;
+
+}
+
+.tabel-ahp th {
+    background-color: #ff961b;
+    color: white;
+
+}
+
+
+/* HASIL KONSISTENSI */
+.hasil-konsistensi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: "Hanken Grotesk", serif;
+    color: #333;
+    margin-bottom: 20px;
+
+
+}
+
+.hasil-konsistensi p {
+    margin: 0;
+    padding: 10px 15px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    min-width: 120px;
+}
+
+
+/* PERHITUNGAN SAW CSS */
+/* PERHITUNGAN SAW CSS */
+.perhitungan-saw {
+    margin-top: -20px;
+    margin-left: 280px;
+    max-width: 77%;
+}
+
+.perhitungan-saw h2 {
+    padding-top: 25px;
+    font-family: 'CyGroteskKey', sans-serif;
+    color: #ff4d00;
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.perhitungan-saw h3 {
+    font-family: 'CyGroteskKey', sans-serif;
+    color: #ff4d00;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.perhitungan-saw hr {
+    border: 0;
+    border-top: 2px solid #ff4d00;
+    margin: 30px 0;
+    margin-left: -35px;
+    margin-right: -30px;
+}
+
+/* TABEL SAW */
+.tabel-saw {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: "Hanken Grotesk", serif;
+    margin-bottom: 20px;
+}
+
+.tabel-saw th, .tabel-saw td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.tabel-saw th {
+    background-color: #ff961b;
+    color: white;
+}
+
+/* HASIL CSS */
+/* HASIL SELEKSI TIM INTI CSS */
+.skor-akhir {
+    margin-top: -20px;
+    margin-left: 280px;
+    max-width: 77%;
+}
+
+.skor-akhir h2 {
+    padding-top: 25px;
+    font-family: 'CyGroteskKey', sans-serif;
+    color: #ff4d00;
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.skor-akhir hr {
+    border: 0;
+    border-top: 2px solid #ff4d00;
+    margin: 30px 0;
+    margin-left: -35px;
+    margin-right: -30px;
+}
+
+.skor-akhir h3 {
+    font-family: 'CyGroteskKey', sans-serif;
+    color: #ff4d00;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* TABEL SKOR AKHIR */
+.tabel-skor-akhir {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: "Hanken Grotesk", serif;
+}
+
+.tabel-skor-akhir th, .tabel-skor-akhir td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.tabel-skor-akhir th {
+    background-color: #ff961b;
+    color: white;
+}
+
+.tabel-skor-akhir tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* TOMBOL CETAK */
+.btn-skor-akhir {
+    font-family: "Hanken Grotesk", serif;
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 20px;
+    background-color: #ff961b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-skor-akhir:hover {
+    background-color: #ff6118;
+}
+
+/* Styling untuk petunjuk pengisian */
+.petunjuk-pengisian {
+    margin-bottom: 20px;
+    width: 110%;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: "Hanken Grotesk", serif;
+    color: #333;
+}
+
+.petunjuk-pengisian h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.petunjuk-pengisian ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.petunjuk-pengisian ul li {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.petunjuk-pengisian strong {
+    font-weight: bold;
+}
+
+.petunjuk-pengisian pre {
+    background-color: #f8f8f8;
+    padding: 10px;
+    margin: 10px 0 0 0;
+    border-radius: 5px;
+    font-size: 13px;
+    overflow-x: auto;
+}
+
+.petunjuk-pengisian code {
+    font-family: 'Courier New', Courier, monospace;
+    color: #444;
+}
+
+/* Tabel Input */
+.tabel-input {
+    width: 90%;
+    border-collapse: collapse;
+    background: white;
+    text-align: center;
+    font-family: "Hanken Grotesk", serif;
+}
+
+/* Header tabel */
+.tabel-input th {
+    background-color: #ff961b;
+    color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Sel tabel */
+.tabel-input td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Input kolom */
+.tabel-input input[type="number"],
+.tabel-input input[type="text"] {
+    width: 70px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: "Hanken Grotesk", serif;
+    font-size: 14px;
+}
+
+/* Container tombol */
+.button-container {
+    display: flex;
+    margin-top: 15px;
+    margin-left: 50px;
+}
+
+/* Tombol Simpan */
+.btn-input {
+    font-family: "Hanken Grotesk", serif;
+    font-weight: bold;
+    padding: 10px 15px;
+    background-color: #ff961b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-input:hover {
+    background-color: #ff6118;
+}
+ .penilaian-alternatif hr {
+    border: 0;
+    border-top: 2px solid #ff4d00;
+    margin: 30px 0;
+    margin-bottom: -05px;
+    margin-left: -35px;
+    padding-left: 285px;
+    border-radius: 0;
+ }
+
+
+/* Responsif untuk layar kecil */
+@media (max-width: 600px) {
+    .tabel-input th,
+    .tabel-input td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .tabel-input input[type="number"],
+    .tabel-input input[type="text"] {
+        width: 60px;
+    }
+
+    .button-container {
+        justify-content: center;
+        margin-left: 0;
+    }
+}
+
+/* Styling untuk Petunjuk Pengisian Form Penilaian */
+.petunjuk-penilaian {
+    margin-bottom: 20px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: "Hanken Grotesk", serif;
+    color: #333;
+}
+
+.petunjuk-penilaian h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.petunjuk-penilaian ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.petunjuk-penilaian ul li {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.petunjuk-penilaian strong {
+    font-weight: bold;
+}
+
+.petunjuk-penilaian ul ul {
+    padding-left: 20px;
+}
+
+.petunjuk-penilaian pre {
+    background-color: #f8f8f8;
+    padding: 10px;
+    margin: 10px 0 0 0;
+    border-radius: 5px;
+    font-size: 13px;
+    overflow-x: auto;
+}
+
+.petunjuk-penilaian code {
+    font-family: 'Courier New', Courier, monospace;
+    color: #444;
+}
+
+/* Tabel Penilaian */
+.tabel-penilaian {
+    width: 90%;
+    border-collapse: collapse;
+    background: white;
+    text-align: center;
+    font-family: "Hanken Grotesk", serif;
+}
+
+/* Header tabel */
+.tabel-penilaian th {
+    background-color: #ff961b;
+    color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Sel tabel */
+.tabel-penilaian td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Input kolom */
+.tabel-penilaian input[type="number"] {
+    width: 70px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: "Hanken Grotesk", serif;
+    font-size: 14px;
+}
+
+/* Container tombol */
+.button-container {
+    display: flex;
+    margin-top: 15px;
+    margin-left: 50px;
+}
+
+/* Tombol Simpan */
+.btn-submit {
+    font-family: "Hanken Grotesk", serif;
+    font-weight: bold;
+    padding: 10px 15px;
+    background-color: #ff961b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-submit:hover {
+    background-color: #ff6118;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 600px) {
+    .tabel-penilaian th,
+    .tabel-penilaian td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .tabel-penilaian input[type="number"] {
+        width: 60px;
+    }
+
+    .button-container {
+        justify-content: center;
+        margin-left: 0;
+    }
+}
+/* Styling untuk penjelasan nilai Crisp */
+.crips {
+    font-family: "Hanken Grotesk", serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    border-radius: 8px;
+}
+
+/* Penekanan pada teks tebal */
+.crips strong {
+    font-weight: bold;
+    color: #ff4d00;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 600px) {
+    .crips {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+.p-ahp {
+    font-size: 16px;
+    font-family: "Hanken Grotesk", serif;
+    line-height: 1.6;
+    text-align: justify;
+    color: #333;
+    margin: 16px 0;
+    padding: 12px 20px;
+    border-radius: 8px;
+}
